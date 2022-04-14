@@ -1,0 +1,33 @@
+Secciones del sitio dinámicas:
+Index: Muestra productos destacados.
+Productos: Muestra el listado de los ítems que se pueden pedir y estén disponibles a la venta.
+Admin / Carga de destacados: cargar los productos destacados.
+Admin / Productos: Carga de productos a la venta.
+Admin / Pedidos: listado de pedidos recibidos.
+
+Planeamiento de tablas:
+
+Tabla prod_destacados:
+Id – Auto increment, index único
+prod_nombre – varchar 300
+prod_img – varchar 300
+prod_detalle – text
+activo - boolean
+
+Tabla productos
+Id – Auto increment, index único
+prod_nombre – varchar 300
+prod_img – varchar 300
+prod_detalle – text
+prod_precio – decimal 10,2
+activo - boolean
+
+Tabla pedidos
+Id – Auto increment, index único
+id_producto: int 10 index
+fecha: datetime
+clie_nom: varchar 150
+clie_dir: varchar 300
+clie_tel: varchar 150
+
+En un escenario mas complejo en realidad, cargaría tablas “artículos, categorías, clientes” etc, y jugaría con la relación entre ellas para mostrar y traer los datos, obligando al usuario a loguearse, pero para no elongar tanto en este trabajo voy a suponer que la web solo recibe pedidos esporádicos sin login y los artículos se cargan de uno en uno por vez.
