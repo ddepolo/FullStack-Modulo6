@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row titulos">
+     <div class="col">
+        <h2>Empleados</h2>
+        <p>Listado y modificación</b></p>
+     </div>
+  </div>
+
+  <table class="table">
+    <tr>
+      <tr colspan="2"></tr>
+      <tr>ID</tr>
+      <tr>Nombre</tr>
+      <tr>Teléfono</tr>
+      <tr>Dirección</tr>
+    </tr>
+    {{#each resu}}
+      <tr>
+        <td><a href="/editar:id={{id}}"><img src="images/pencil-fill.svg"></a></td>
+        <td><a href="/borrar:id={{id}}"><img src="images/x-circle-fill.svg"> </a></td>
+        <td>{{id}}</td>
+        <td>{{nombre}}</td>
+        <td>{{tel}}</td>
+        <td>{{dir}}</td>
+      </tr>
+    {{/each}}
+
+</table>
+
+</div>
+
