@@ -6,21 +6,32 @@
      </div>
   </div>
 
+  <p>
+    <form action="{{postUrl}}" method="post">
+      Agregar: <br>
+      <input type="hidden" name="id" value="{{empl.id}}">
+      <input type="text" name="nombre" placeholder="Nombre" value="{{empl.nombre}}">
+      <input type="text" name="telefono" placeholder="Teléfono" value="{{empl.telefono}}">
+      <input type="text" name="dir" placeholder="Dirección" value="{{empl.dir}}">
+      <button type="submit" class="btn btn-warning">Confirmar</button>
+    </form>
+  </p>
+
   <table class="table">
     <tr>
-      <tr colspan="2"></tr>
-      <tr>ID</tr>
-      <tr>Nombre</tr>
-      <tr>Teléfono</tr>
-      <tr>Dirección</tr>
+      <td colspan="2"></td>
+      <td>ID</td>
+      <td>Nombre</td>
+      <td>Teléfono</td>
+      <td>Dirección</td>
     </tr>
     {{#each resu}}
       <tr>
-        <td><a href="/editar:id={{id}}"><img src="images/pencil-fill.svg"></a></td>
-        <td><a href="/borrar:id={{id}}"><img src="images/x-circle-fill.svg"> </a></td>
+        <td><a href="/editar/{{id}}"><img src="images/pencil-fill.svg"></a></td>
+        <td><a href="/borrar/{{id}}"><img src="images/x-circle-fill.svg"> </a></td>
         <td>{{id}}</td>
         <td>{{nombre}}</td>
-        <td>{{tel}}</td>
+        <td>{{telefono}}</td>
         <td>{{dir}}</td>
       </tr>
     {{/each}}
