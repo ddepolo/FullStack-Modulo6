@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row titulos">
+     <div class="col">
+        <h2>Empleados</h2>
+        <p>Listado y modificación</b></p>
+     </div>
+  </div>
+
+  <p>
+    <form action="{{postUrl}}" method="post" >
+      Agregar: <br>
+      <input type="hidden" name="id" value="{{empl.id}}">
+      <input type="text" name="nombre" placeholder="Nombre" value="{{empl.nombre}}">
+      <input type="text" name="telefono" placeholder="Teléfono" value="{{empl.telefono}}">
+      <input type="text" name="dir" placeholder="Dirección" value="{{empl.dir}}">
+      <input type="file" name="imagen" id="imagen" value="">
+      <button type="submit" class="btn btn-warning">Confirmar</button>
+    </form>
+  </p>
+
+  <table class="table">
+    <tr>
+      <td colspan="2"></td>
+      <td>ID</td>
+      <td>Nombre</td>
+      <td>Teléfono</td>
+      <td>Dirección</td>
+    </tr>
+    {{#each resu}}
+      <tr>
+        <td><a href="/editar/{{id}}"><img src="images/pencil-fill.svg"></a></td>
+        <td><a href="/borrar/{{id}}"><img src="images/x-circle-fill.svg"> </a></td>
+        <td>{{id}}</td>
+        <td>{{nombre}}</td>
+        <td>{{telefono}}</td>
+        <td>{{dir}}</td>
+      </tr>
+    {{/each}}
+
+</table>
+
+</div>
+
