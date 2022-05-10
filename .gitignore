@@ -1,4 +1,6 @@
 /unidad1/node_modules
 /unidad2/node_modules
-/unidad3/node_modules
-/unidad4/node_modules
+/unidad3/BACK/node_modules
+/unidad3/FRONT/node_modules
+/unidad4/BACK/node_modules
+/unidad4/FRONT/node_modules

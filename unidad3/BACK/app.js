@@ -4,11 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var fileUpload = require('express-fileupload');
+var cors = require('cors');
 
 require('dotenv').config();
 
 
-var indexRouter = require('./routes/index');
+var homeRouter = require('./routes/home');
+var apiRouter = require('./routes/api');
 
 
 const async = require('hbs/lib/async');
@@ -26,7 +28,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', indexRouter);
+
+app.use('/', homeRouter);
+app.use('/api', cors(), apiRouter);
 
 app.use(fileUpload({
   useTempFiles: true,
